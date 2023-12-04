@@ -1,0 +1,24 @@
+﻿@model List<Recipe>
+
+@{
+    ViewData["Title"] = "Blog Home";
+}
+<h2>Filter Recipes</h2>
+<form method="post">
+    <label>Recipe Name</label>
+    <input name="toname" />
+    <input type="submit" />
+</form>
+<h1>Recipes</h1>
+@if (@Model != null)
+{
+
+    @foreach (var recipe in Model)
+    {
+        <p>
+            Name: @recipe.Name <br>
+            Description: @recipe.Description <br>
+            Instructions: @recipe.Instructions <br>
+        </p>
+    }
+}

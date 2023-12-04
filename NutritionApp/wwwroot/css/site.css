@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.numberInput {
+    width: 60px;
+}
+
+.descriptionBox {
+    height: 250px;
+}
+
+.c {
+    width: 100%;
+}
+
+/*
+.b {
+    border: 1px green solid;
+}*/

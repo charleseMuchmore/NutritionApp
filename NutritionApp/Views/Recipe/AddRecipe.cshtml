@@ -1,0 +1,59 @@
+﻿@model List<Ingredient>
+
+<form method="post" class="container-fluid">
+    <div class="row b">
+        <div class="col-2 b">
+            <label for="recipeName">Recipe Name</label><br />
+            <input id="recipeName" name="Name" type="text" />
+        </div>
+        <div class="col-5 b">
+            <div class="row b">
+                <div class="col-6 b">
+                    <a class="text-dark" asp-area="" asp-controller="Ingredient" asp-action="AddIngredient">Create New Ingredient</a>
+                </div>
+                <div class="col-2 b">
+                    <a class="btn btn-secondary" asp-area="" asp-controller="Ingredient" asp-action="Index">+</a>
+                </div>
+                <div class="col-3 b">
+                    Amount (oz)
+                </div>
+            </div>
+        </div>
+        <div class="col-5 b">
+            <label for="instructions">Instructions</label>
+        </div>
+    </div>
+    <div class="row b">
+        <div class="col-2 b">
+            <label for="description">Description</label><br />
+            <input id="description" name="Description" type="text" class="descriptionBox" />
+        </div>
+        <div class="col-5 b">
+            @if (@Model != null)
+            {
+                @foreach (var ingr in Model)
+                {
+                    <div id="@ingr.IngredientId" class="row b">
+                        <div class="col-2 b">
+                        <input type="button" value="-" />
+                        </div>
+                        <div class="col-6 b">
+                        <input type="text" readonly value="@ingr.Name"/>
+                        </div>
+                        <div class="col-4 b">
+                        <input type="number" class="numberInput" />
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-5 b">
+            <input id="instructions" name="Instructions" type="text" class="descriptionBox" />
+        </div>
+    </div>
+    <div class="row b">
+        <div class="col-3 b">
+            <input type="submit" value="save" />
+        </div>
+    </div>
+</form>
